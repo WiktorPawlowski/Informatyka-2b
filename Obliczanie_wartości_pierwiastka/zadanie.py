@@ -1,4 +1,4 @@
-liczba = float(input("Podaj liczbę, z której chcesz obliczyć pierwiastek: "))
+liczba = int(input("Podaj liczbę, z której chcesz obliczyć pierwiastek: "))
 
 if liczba < 0:
     print("Błąd: liczba ujemna!")
