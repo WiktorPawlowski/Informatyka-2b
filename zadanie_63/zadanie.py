@@ -16,3 +16,28 @@ liczby = []
 for i in range(len(ciagi)):
     liczby.append(horner(ciagi[i],2))
 print(liczby)
+
+sito = []
+for i in range(363000):
+    sito.append(1)
+for i in range(2, 363000):
+    if sito[i] == 1:
+        for j in range(i+i, 363000,i):
+                sito[j] = 0
+pierwsze = []
+for i in range(2,363000):
+    if sito[i] == 1:
+        pierwsze.append(i)
+print(pierwsze)
+
+for i in range(len(liczby)):
+    czynniki = []
+    for j in range(len(pierwsze)):
+        liczba = liczby[i]
+        while liczba % czynniki[j] == 0:
+            czynniki.append(pierwsze[j])
+            liczba = liczba // pierwsze[j]
+            if len(czynniki) > 2:
+                break
+    if len(czynniki) == 2:
+        print(liczby[i], czynniki)
